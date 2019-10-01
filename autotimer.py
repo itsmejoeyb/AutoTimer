@@ -84,7 +84,7 @@ try:
 
             if not first_time:
                 end_time = datetime.datetime.now()
-                time_entry = TimeEntry(start_time, end_time, 0, 0, 0, 0)
+                time_entry = TimeEntry(start_time, end_time, 0, 0, 0)
                 time_entry._get_specific_times()
 
                 exists = False

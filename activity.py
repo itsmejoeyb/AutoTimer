@@ -77,11 +77,11 @@ class Activity:
 
 
 class TimeEntry:
-    def __init__(self, start_time, end_time, days, hours, minutes, seconds):
+    def __init__(self, start_time, end_time, hours, minutes, seconds):
         self.start_time = start_time
         self.end_time = end_time
         self.total_time = end_time - start_time
-        self.days = days
+        self.days = 0
         self.hours = hours
         self.minutes = minutes
         self.seconds = seconds
@@ -94,9 +94,8 @@ class TimeEntry:
 
     def serialize(self):
         return {
-            'start_time' : self.start_time.strftime("%Y-%m-%d %H:%M:%S"),
-            'end_time' : self.end_time.strftime("%Y-%m-%d %H:%M:%S"),
-            'days' : self.days,
+            'start_time' : self.start_time.strftime("%I:%M:%S %p"),
+            'end_time' : self.end_time.strftime("%I:%M:%S %p"),
             'hours' : self.hours,
             'minutes' : self.minutes,
             'seconds' : self.seconds
